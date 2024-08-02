@@ -1,0 +1,94 @@
+EXECUTION CONTEXT 
+
+A. GLOBAL EXECUTION CONTEXT 
+B. FUNCTION EXECUTION CONTEXT
+C. EVAL EXECUTION CONTEXT
+
+PHASES - 
+A. MEMORY CREATION PHASE
+B. EXECUTION PHASE
+
+
+// program steps 
+let val1=10;
+let val2 = 5;
+function addNum(num1,num2){
+let total =num1+num2
+return total
+}
+let result1 = addNum(val1,val2)
+let reuslt2 = addNum(10,2)
+
+
+steps how it is executed 
+a. GLOBAL EXECUTION -> it is allocated in this member 
+b. Memory creation phase -> all variable are colleceted and stored 
+   val1 = undefined
+   val2 = undefined
+   addNum = definition
+   result1 = undefined 
+   result2 = undefined
+
+   CYCLE2 - 
+   Execution phase 
+   val1 = 10
+   val2 = 5
+   addNum =  _________________
+            | new variable    |
+            |  environment    |
+            |        +        |  => after the completion of its work it will delete 
+            | Execution Thread|
+            |                 |
+            |_________________| 
+                      |
+        |--------------------------------------|
+    Memory phase                         Execution Context
+    val1 = undefined                    num1 =10  
+    val2 = undefined                    num2 = 5
+    total = undefined                   total= 15 ( now total is return to global execution context ) 
+    
+
+result11 = 15
+result2 = 12
+
+
+******************************** CALLSTACK ************************
+
+|                |            
+|                |
+|                |
+|                |
+|                |
+|________________|
+|    call stack  |
+|________________|
+|global execution|
+|________________|
+
+function one(){
+    console.log("one")
+    two()
+}
+
+function two(){
+    console.log("two")
+    three()
+}
+
+function three(){
+    console.log("three")
+}
+one()
+two()
+three()
+
+output is - 
+one
+two
+three
+two
+three
+three
+
+
+
