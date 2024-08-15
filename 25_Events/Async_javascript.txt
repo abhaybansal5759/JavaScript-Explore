@@ -1,0 +1,17 @@
+Javascript -
+    a. Synchronous
+    b. Single threaded
+
+Execution Context
+    - Execute one line of code at a time 
+    * each operation waits for the last one to complete before executing 
+
+Blocking Code           vs          Non Blocking code 
+    |                                       |
+    V                                       V
+block the flow of program           Does not block execution 
+    |                                       |
+    V                                       V
+Read file sync                          Read file Async 
+
+Js Engine = Memory Heap + Call Stack
